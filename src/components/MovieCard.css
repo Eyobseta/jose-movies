@@ -41,3 +41,15 @@
 .rating {
   color: var(--accent);
 }
+@media (max-width: 480px) {
+  .movie-card {
+    width: 120px;
+  }
+}
+@media (max-width: 768px) {
+  .movie-row {
+    gap: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+}

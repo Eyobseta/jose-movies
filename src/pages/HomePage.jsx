@@ -1,8 +1,13 @@
-import { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
-import HeroBanner from '../components/HeroBanner';
-import CategoryRow from '../components/CategoryRow';
-import { fetchTrending, fetchPopular, fetchTopRated, fetchNowPlaying } from '../services/tmdb';
+import { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
+import HeroBanner from "../components/HeroBanner";
+import CategoryRow from "../components/CategoryRow";
+import {
+  fetchTrending,
+  fetchPopular,
+  fetchTopRated,
+  fetchNowPlaying,
+} from "../services/tmdb";
 
 const HomePage = () => {
   const [trending, setTrending] = useState([]);
@@ -22,7 +27,7 @@ const HomePage = () => {
       setPopular(popularData);
       setTopRated(topRatedData);
       setNowPlaying(nowPlayingData);
-      setHeroMovie(trendingData[0]); // first trending as hero
+      setHeroMovie(trendingData[0]); 
     };
     loadData();
   }, []);
@@ -31,10 +36,30 @@ const HomePage = () => {
     <>
       <Navbar />
       <HeroBanner movie={heroMovie} />
-      <CategoryRow title="Trending Today" movies={trending} />
-      <CategoryRow title="Popular Movies" movies={popular} />
-      <CategoryRow title="Top Rated" movies={topRated} />
-      <CategoryRow title="Now Playing" movies={nowPlaying} />
+      <CategoryRow
+        title="Trending Today"
+        movies={trending}
+        limit={5}
+        viewAllLink="/category/trending"
+      />
+      <CategoryRow
+        title="Popular Movies"
+        movies={popular}
+        limit={5}
+        viewAllLink="/category/popular"
+      />
+      <CategoryRow
+        title="Top Rated"
+        movies={topRated}
+        limit={5}
+        viewAllLink="/category/top-rated"
+      />
+      <CategoryRow
+        title="Now Playing"
+        movies={nowPlaying}
+        limit={5}
+        viewAllLink="/category/now-playing"
+      />
     </>
   );
 };

@@ -4,22 +4,33 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setMobileMenuOpen(false);
     }
+  };
+
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="logo">MovieDiscovery</Link>
-        <div className="nav-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/trending" className="nav-link">Trending</Link>
+        <div className="navbar-top-row">
+          <Link to="/" className="logo" onClick={handleLinkClick}>Jose</Link>
+          <button 
+            className="mobile-menu" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
         </div>
         <form className="search-form" onSubmit={handleSearch}>
           <input
@@ -31,7 +42,10 @@ const Navbar = () => {
           />
           <button type="submit" className="search-button">Go</button>
         </form>
-        <div className="mobile-menu">☰</div>
+        <div className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
+          <Link to="/" className="nav-link" onClick={handleLinkClick}>Home</Link>
+          <Link to="/category/trending" className="nav-link" onClick={handleLinkClick}>Trending</Link>
+        </div>
       </div>
     </nav>
   );

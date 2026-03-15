@@ -77,3 +77,42 @@
   color: white;
   margin-right: var(--spacing-xs);
 }
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+
+  .detail-poster {
+    width: 200px;
+  }
+
+  .detail-title {
+    font-size: 28px;
+  }
+
+  .detail-meta {
+    justify-content: center;
+  }
+
+  .detail-overview {
+    text-align: left;
+  }
+
+  .detail-extra {
+    grid-template-columns: 1fr;
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

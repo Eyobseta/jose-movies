@@ -30,3 +30,20 @@
   background-color: var(--accent);
   border-radius: var(--border-radius-full);
 }
+.view-all-container {
+  text-align: right;
+  margin-top: var(--spacing-sm);
+  padding-right: var(--spacing-lg);
+}
+
+.view-all-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.view-all-link:hover {
+  opacity: 0.8;
+}

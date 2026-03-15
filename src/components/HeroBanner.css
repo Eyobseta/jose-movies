@@ -66,3 +66,21 @@
 .btn-secondary:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: var(--spacing-lg);
+    align-items: flex-end;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-overview {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovieDetails } from '../services/tmdb';
 import './MovieDetail.css';
@@ -7,6 +7,8 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadMovie = async () => {
@@ -50,6 +52,9 @@ const MovieDetail = () => {
             <button className="btn btn-primary" onClick={() => alert('Telegram link here')}>
               Download on Telegram
             </button>
+            <button className="btn btn-secondary" onClick={() => navigate('/')}>
+  Back to Home
+</button>
           </div>
         </div>
       </div>
