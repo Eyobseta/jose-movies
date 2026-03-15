@@ -1,0 +1,13 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: var(--spacing-xxl);
+  font-size: 18px;
+}

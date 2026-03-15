@@ -1,0 +1,16 @@
+.search-page {
+  min-height: 80vh;
+}
+
+.search-header {
+  font-size: 24px;
+  font-weight: 600;
+  padding: var(--spacing-lg) var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: var(--spacing-xxl);
+}
